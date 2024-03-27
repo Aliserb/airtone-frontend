@@ -1,0 +1,197 @@
+@media only screen and (max-width: 1300px) {
+    .container {padding: 0 15px;}
+}
+
+@media only screen and (max-width: 960px) {
+    .brand_name_row {
+        width: 400px;
+        padding-top: 200px;
+    }
+
+    .brand_name_wrap svg {
+        width: 100%;
+        height: auto;
+    }
+
+    #brand_name_image-2 {
+        right: 0;
+        max-width: 100px;
+    }
+
+    #brand_name_image-1 img {
+        max-width: 90px;
+        margin-left: -7px;
+    }
+
+    .simple_text_block {
+        padding: 60px 20px;
+    }
+
+    .simple_text_block p {
+        font-size: 24px;
+    }
+
+    .mt_160, .mt_120, .mt_130, .pt_130, .pb_120, .mt_100 {
+        margin-top: 60px;
+    }
+
+    .about_block_marker {
+        font-size: 18px;
+    }
+
+    .about_block_title h3 {
+        font-size: 48px;
+        margin-left: -5px;
+    }
+
+    .select_colors_title h3 {
+        font-size: 32px;
+        margin-right: 20px;
+    }
+
+    .select_colors_tabs_item.swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .select_colors_tabs_item.swiper-pagination-bullet {
+        width: 30px;
+        height: 30px;
+    }
+
+    .select_colors_slider.mt_120 {
+        margin-top: 30px;
+    }
+
+    .select_colors_swiper .swiper-slide img {
+        max-width: 80%;
+    }
+
+    .pt_130 {
+        padding-top: 30px;
+    }
+
+    .pb_120 {
+        padding-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .design_about_gallery {
+        flex-wrap: wrap;
+    }
+
+    .design_about_gallery_col.col-8,
+    .design_about_gallery_col.col-4 {
+        width: 100%;
+    }
+
+    .design_about_gallery.mt_40 {
+        margin-top: 0;
+    }
+
+    .design_about_img {
+        margin-top: 25px;
+    }
+
+    .design_about_gallery_col.col-8 {
+        padding-right: 0;
+    }
+
+    .design_about_gallery_col.col-4 {
+        padding-left: 0;
+    }
+
+    .design_about_text {
+        max-width: 100%;
+    }
+
+    .design_about_text.mt_40 {
+        margin-top: 20px;
+    }
+
+    .design_about_text, .design_about_text p {
+        font-size: 18px;
+    }
+
+    .about_block_title h3 {
+        font-size: 42px;
+    }
+
+    .about_block_title h3 {
+        margin-left: 0;
+    }
+
+    .sound_about_body {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .about_flex_body {
+        flex-wrap: wrap-reverse;
+    }
+    
+    .about_flex_body > div:last-child {
+        margin-left: 0;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .about_body_text_col {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .brand_name_row {
+        width: 200px;
+        padding-top: 100px;
+    }
+
+    .brand_name_wrap svg {
+        width: 100%;
+        height: auto;
+    }
+
+    #brand_name_image-2 {
+        right: 0;
+        max-width: 50px;
+    }
+
+    #brand_name_image-1 img {
+        max-width: 47px;
+        margin-left: -4px;
+    }
+
+    #brand_name_image-2 img {
+        width: 10px;
+        height: 10px;
+        margin-top: 10px;
+    }
+
+    .simple_text_block {
+        padding: 20px 20px;
+    }
+
+    .select_colors_slider,
+    .select_colors_header {
+        flex-wrap: wrap;
+    }
+
+    .select_colors_swiper,
+    .select_colors_right {
+        width: 100%;
+    }
+
+    .select_colors_swiper {
+        padding-right: 0;
+    }
+
+    .select_colors_right {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+    .select_colors_tabs.swiper-pagination-bullets.swiper-pagination-horizontal {
+        margin-top: 20px;
+    }
+
+    .comfort_about_section {
+        margin-top: 30px;
+    }
+}

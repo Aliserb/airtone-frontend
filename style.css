@@ -1,0 +1,480 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1202px;
+    margin: 0 auto;
+    /* padding: 0 15px; */
+}
+
+.brand_name_section {
+    background: #26262B;
+    padding: 120px 0px;
+}
+
+.brand_name_row {
+    margin: 0 auto;
+    width: fit-content;
+    position: relative;
+    padding-top: 400px;
+    transition: all 1s ease 0s;
+}
+
+.brand_name_wrap svg {
+    position: relative;
+    z-index: 2;
+}
+
+#brand_name_image-2 {
+    position: absolute;
+    top: -15px;
+    bottom: 0;
+    margin: auto;
+    right: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 245px;
+    width: 100%;
+    z-index: 1;
+    /* animation: growCircle 2s ease-out forwards; */
+}
+
+#brand_name_image-2 img {
+    width: 100%;
+    width: 44px;
+    height: 44px;
+    transition: all 1s ease 0s;
+}
+
+.brand_name_wrap {
+    position: relative;
+}
+
+#brand_name_image-1 img {
+    max-width: 200px;
+    margin-left: -15px;
+}
+
+#brand_name_image-1 {
+    position: absolute;
+    top: 0;
+}
+
+
+/* .brand_name_section.active .brand_name_row {
+    padding-top: 83px;
+}
+
+.brand_name_section.active #brand_name_image-2 img {
+    width: 100%;
+    height: auto;
+} */
+/* @keyframes growCircle {
+    to {
+      width: 245px;
+    }
+} */
+
+.simple_text_block {
+    padding: 150px 0px;
+}
+
+.simple_text_block p {
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 41.6px */
+}
+
+.video_block_section video {
+    max-height: 730px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.mt_160 {
+    margin-top: 160px;
+}
+
+.mt_120 {
+    margin-top: 120px;
+}
+
+.mt_40 {
+    margin-top: 40px;
+}
+
+.mt_130 {
+    margin-top: 130px;
+}
+
+.pt_130 {
+    padding-top: 130px;
+}
+
+.pb_120 {
+    padding-bottom: 120px;
+}
+
+.mt_100 {
+    margin-top: 100px;
+}
+
+.dark_bg {
+    background: #26262B;
+}
+
+.mb_160 {
+    margin-bottom: 160px;
+}
+
+.about_block_title {
+    max-width: 750px;
+    width: 100%;
+}
+
+.about_block_marker {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 28.6px */
+}
+
+.about_block_title h3 {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 97px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 97px */
+    /* text-transform: capitalize; */
+    margin-left: -10px;
+}
+
+.design_about_text {
+    max-width: 53%;
+    margin-left: auto;
+}
+
+.design_about_text,
+.design_about_text p {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%; /* 39.6px */
+}
+
+.design_about_gallery {
+    display: flex;
+    align-items: flex-start;
+}
+
+.design_about_img {
+    margin-top: 80px;
+}
+
+.design_about_img img {
+    width: 100%;
+}
+
+.design_about_gallery_col.col-8 {
+    width: 60%;
+    padding-right: 10px;
+}
+
+.design_about_gallery_col.col-4 {
+    width: 40%;
+    padding-left: 10px;
+}
+
+.design_image_caption {
+    margin-top: 12px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%; /* 25.2px */
+    display: block;
+}
+
+.select_colors_title h3 {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 75px */
+    max-width: 690px;
+}
+
+.select_colors_header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.select_colors_tabs.swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+.select_colors_tabs_item.swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .select_colors_tabs_item.swiper-pagination-bullet{
+    margin: 0;
+    margin-right: 34px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    opacity: 1;
+}
+
+.select_colors_tabs_item.swiper-pagination-bullet.swiper-pagination-bullet-active,
+.swiper-pagination-horizontal.swiper-pagination-bullets .select_colors_tabs_item.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    border: 1px solid #E3E3E3;
+}
+
+.select_colors_tabs_item:last-child {
+    margin-right: 0;
+}
+
+.select_colors_tabs_item img {
+    width: 100%;
+}
+
+.select_colors_swiper {
+    width: 55%;
+    padding-right: 10px;
+    position: relative;
+}
+
+.select_colors_right {
+    width: 45%;
+    padding-left: 10px;
+}
+
+.select_colors_swiper .swiper-slide img {
+    max-width: 535px;
+}
+
+.select_colors_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F0F0F0;
+    padding: 23px 0px;
+}
+
+.pause_selec_colors_swiper {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.select_colors_slider {
+    display: flex;
+    align-items: stretch;
+}
+
+.select_colors_right_item {
+    height: 100%;
+}
+
+.select_colors_right_item img {
+    max-width: 86%;
+}
+
+.select_colors_right_body {
+    background: #F0F0F0;
+    padding: 41px 0px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark_bg .about_block_marker,
+.dark_bg .about_block_title h3 {
+    color: #fff;
+}
+
+.sound_about_body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sound_about_image {
+    max-width: 52%;
+}
+
+.sound_about_image img {
+    width: 100%;
+}
+
+.sound_about_text {
+    margin-left: 20px;
+    max-width: 530px;
+}
+
+.sound_about_text,
+.sound_about_text p {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%; /* 39.6px */
+}
+
+.about_flex_body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about_flex_body.flext_start {
+    align-items: flex-start;
+}
+
+.about_body_text,
+.about_body_text p {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%; /* 39.6px */
+}
+
+.about_body_text_col {
+    max-width: 540px;
+}
+
+.about_flex_image_col {
+    max-width: 640px;
+}
+
+.about_flex_image img {
+    width: 100%;
+}
+
+.about_flex_body > div:last-child {
+    margin-left: 30px;
+}
+
+.comfort_about_row .about_block_title h3 {
+    margin-left: 0;
+}
+
+.select_colors_right {
+    position: relative;
+}
+
+.select_colors_right_item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.select_colors_right_item:first-child {
+    position: relative;
+}
+
+.select_colors_right_item {
+    /* visibility: hidden; */
+    opacity: 0;
+    transition: all 1s ease 0s;
+}
+
+.select_colors_right_item.active {
+    opacity: 1;
+}
+
+.sound_about_text {
+    overflow: hidden;
+    position: relative;
+}
+
+.sound_about_text p {
+    opacity: 0;
+}
+
+.sound_about_text-2 {
+    position: absolute;
+    top: 0;
+}
+
+/* logo */
+.part_1_kpi {
+    margin-right: 14px;
+    transition: all 0.5s ease-out;
+}
+
+.part_2_kpi {
+    margin-right: 10px;
+    transition: all 0.5s ease-out;
+}
+
+.part_3_kpi {
+    transition: all 0.5s ease-out;
+    opacity: 0;
+}
+
+.logo_kpi_bottom {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #fff;
+    margin-top: 3px;
+}
+
+.logo_kpi {
+    transform: scale(0.8);
+    transition: all 0.5s ease-out;
+    opacity: 0.6;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-left: -20px;
+}
+
+.logo_kpi:hover {
+    opacity: 1;
+}
+
+.logo_kpi_img {
+    transform: translate(-39px, 0px);
+    transition: all 0.5s ease-out;
+}
+
+.logo_kpi:hover .logo_kpi_img {
+    transform: translate(0px, 0px);
+}
+
+.logo_kpi:hover .part_3_kpi {
+    opacity: 1;
+}
+
+.logo_kpi a {
+    text-decoration: none;
+}
