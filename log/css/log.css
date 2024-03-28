@@ -86,3 +86,116 @@
     opacity: 0;
     visibility: hidden;
 }
+
+/* log animation blocks */
+.log_block_wrap {
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.log_block_wrap img {
+    width: 100%;
+}
+
+.about__log-section {
+    height: 5000px;
+}
+
+.about__log-wrapper {
+    position: sticky;
+    top: 0;
+    /* padding-top: 140px; */
+    margin-top: 140px;
+}
+
+.about_log_first-title,
+.about__log_animation-title {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    color: #000;
+}
+
+.about_log_first-desc,
+.about__log_animation-desc {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 39.6px;
+    color: #000;
+    margin-top: 32px;
+}
+
+.about_log_first-item {
+    max-width: 530px;
+    width: 100%;
+    position: absolute;
+    transition: all 0.3s ease 0s;
+}
+
+.about__log_block {
+    position: relative;
+    padding: 70px 0;
+    overflow: hidden;
+}
+
+.about_log_first_left-text {
+    top: 0;
+    left: 0;
+}
+
+.about_log_first_right-text {
+    right: 0;
+    bottom: 0;
+}
+
+.about_log_first_left-text .about_log_first-desc {
+    max-width: 420px;
+    width: 100%;
+}
+
+#about__log_animation-1 .about_log_first-item {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#about__log_animation-1.active .about_log_first-item {
+    opacity: 1;
+    visibility: visible;
+}
+
+.about__log_animation-title,
+.about__log_animation-desc {
+    text-align: center;
+}
+
+.about__log_animation.p-absolute-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.about__log_animation {
+    transition: all 1s ease 0s;
+}
+
+.about__log_animation.text-hidden {
+    /* transform: translate3d(0px, 190px, 0px); */
+    opacity: 0;
+    visibility: hidden;
+}
+
+.about__log_animation.text-hidden.active {
+    /* transform: translate3d(0px, 0px, 0px); */
+    opacity: 1;
+    visibility: visible;
+}
+
+#about__log_animation-2,
+#about__log_animation-3,
+#about__log_animation-4 {
+    bottom: 60px;
+}
