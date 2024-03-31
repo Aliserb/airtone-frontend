@@ -10,8 +10,6 @@ let logScroll = gsap
             start: "top",
             scrub: true,
             end: "+=100%",
-            markers: true,
-            // pin: true,
             toggleActions: "play none none reverse",
             duration: 2,
             onEnterBack: () => {
@@ -109,7 +107,6 @@ const logAboutTimeline = gsap
             trigger: "#about__log",
             start: "top +20%",
             end: '+=100%',
-            markers: true,
             duration: 20,
             scrub: true,
             toggleActions: "play none none reverse",
@@ -153,7 +150,6 @@ const logSoundTimeline = gsap
             trigger: "#log_sound_block",
             start: "top -20%",
             end: '+=100%',
-            markers: true,
             duration: 20,
             scrub: true,
             toggleActions: "play none none reverse",
@@ -175,5 +171,35 @@ const logSoundTimeline = gsap
                     logSoundImagesArr[nextFrame] = nextImage;
                 }
             },
+        }
+    })
+
+// log media
+const logMedia = document.querySelector('#log__photo_media');
+const logMediaVideos = document.querySelectorAll('#log__photo_media video');
+
+let logMediaScroll = gsap
+    .timeline({
+        scrollTrigger: {
+            trigger: logMedia,
+            start: "top",
+            scrub: true,
+            end: "+=100%",
+            toggleActions: "play none none reverse",
+            duration: 2,
+            onEnter: () => {
+                logMediaVideos.forEach((video) => {
+                    if (typeof video.loop == 'boolean') { // loop supported
+                        video.loop = true;
+                    } else { // loop property not supported
+                        video.addEventListener('ended', function () {
+                            this.currentTime = 0;
+                            this.play();
+                        }, false);
+                    }
+
+                    video.play();
+                })
+            }
         }
     })
