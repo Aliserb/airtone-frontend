@@ -1,0 +1,151 @@
+@media only screen and (max-width: 1300px) {
+    .about_log_first-title, .about__log_animation-title {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .about_log_first-desc, .about__log_animation-desc {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .log_block_wrap {
+        max-width: 440px;
+    }
+
+    .log__sound-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .log__sound-desc {
+        margin-top: 20px;
+    }
+
+    .log__sound-row {
+        margin-top: 50px;
+    }
+
+    .log__sound-title, .log_section_title {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .log__sound-section {
+        padding: 60px 0px;
+    }
+
+    .log__photo_net-section {
+        padding: 60px 0px 0px 0px;
+    }
+
+    .log__photo_net-row {
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .log__sound-col:nth-child(1),
+    .log__sound-col:nth-child(2) {
+        width: 100%;
+    }
+
+    .log__sound-desc {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 840px) {
+
+}
+
+@media only screen and (max-width: 520px) {
+    #about__log_animation-2, #about__log_animation-3, #about__log_animation-4 {
+        bottom: -100px;
+    }
+
+    .log_advantage-icon img {
+        max-width: 64px;
+        max-height: 64px;
+    }
+
+    .log_advantage-title {
+        font-size: 16px;
+        line-height: 22px;
+        margin-top: 8px;
+    }
+
+    .log__advantages-row {
+        grid-gap: 30px 20px;
+    }
+
+    .log__photo_net-row {
+        flex-wrap: wrap;
+    }
+
+    .log__photo_net-left-col,
+    .log__photo_net-right-col {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .log__photo_net-right-col {
+        margin-top: 40px;
+    }
+
+    .log_photo-leftTop,
+    .log_photo-leftBottom,
+    .log_photo-rightTop,
+    .log_photo-rightBottom {
+        height: 50%;
+    }
+
+    .about__log_block {
+        overflow: visible;
+    }
+
+    .about__log_animation {
+        height: 200px;
+        overflow: scroll !important;
+    }
+
+    .about_log_first-item {
+        position: relative;
+    }
+
+    .about_log_first_right-text {
+        margin-top: 20px;
+    }
+
+    #about__log_animation-1 {
+        display: none;
+    }
+
+    #about__log_animation-1.active {
+        display: block;
+    }
+
+    .log__sound-col:nth-child(1) {
+        margin-right: 0;
+    }
+
+    .banner__log-mask-title {
+        font-size: 100px;
+    }
+
+    .banner__log-sticky {
+        height: 100vh;
+        display: flex;
+        align-items: center;    
+    }
+
+    .banner__log_video-text-wrap {
+        margin: 30px 0px 0px 0px;
+    }
+
+    .banner__log_video-title,
+    .banner__log_video-text {
+        color: #000;
+    }
+}
