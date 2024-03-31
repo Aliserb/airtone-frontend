@@ -2,6 +2,10 @@
     font-family: montserrat;
 }
 
+.container {
+    max-width: 1300px;
+}
+
 .banner__log-mask-wrapper {
     position: absolute;
     top: 0;
@@ -50,6 +54,7 @@
 .banner__log-sticky {
     position: sticky;
     top: 0;
+    overflow: hidden;
 }
 
 .banner__log-mask-container {
@@ -198,4 +203,111 @@
 #about__log_animation-3,
 #about__log_animation-4 {
     bottom: 60px;
+}
+
+/* advantages */
+.log__advantages-row {
+    display: grid;
+    grid-gap: 80px 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.log__advantages-card-body {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.log_advantage-icon img {
+    max-width: 128px; max-height: 128px;
+    width: 100%; height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.log_advantage-title {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 39.6px;
+    color: #000;
+    text-align: center;
+    margin-top: 16px;
+}
+
+.log_advantage-desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28.8px;
+    color: #000;
+    text-align: center;
+    margin-top: 16px;
+}
+
+.log__advantages-section {
+    background: #fff;
+    padding: 60px 0px;
+}
+
+/* log sound */
+.log__sound-section {
+    background: #F0F0F0;
+    padding: 120px;
+}
+
+.log__sound-title {
+    font-weight: 400;
+    font-size: 97px;
+    line-height: 97px;
+    color: #000;
+}
+
+.log__sound-row {
+    margin-top: 150px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.log__sound-img-wrap {
+    background: #DBDBDB;
+    /* max-width: 638px;
+    width: 100%; */
+}
+
+.log__sound-img-wrap img {
+    width: 100%;
+}
+
+.log__sound-col:nth-child(1) {
+    margin-right: 30px;
+    width: 60%;
+    max-width: 638px;
+}
+
+.log__sound-col:nth-child(2) {
+    width: 40%;
+}
+
+.log__sound-desc,
+.log__sound-desc p {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 39.6px;
+    color: #000;
+}
+
+.log__sound-desc * {
+    margin-top: 16px;
+}
+
+.log__sound-desc *:first-child {
+    margin-top: 0;
+}
+
+#log_sound_block {
+    height: 2000px;
+}
+
+.log_sound_sticky {
+    position: sticky;
+    top: -30%;
 }

@@ -49,8 +49,15 @@ const aboutLogImage = document.getElementById("log_block-first_img");
 
 const logAboutImages = Array.from({ length:486 }, (_, index) => `Анимация_LOG_${index > 100 ? '' : '0'}00${index < 10 ? '0' : ''}${index}-min.png`);
 
+// log sound animation
+const soundLog = document.getElementById('log_sound_block');
+const soundLogImage = document.getElementById("log__sound-img");
+
+const logSoundImages = Array.from({ length:60 }, (_, index) => `000${index < 10 ? '0' : ''}${index}-min.png`);
+
 // Массив для хранения загруженных изображений
 const logAboutImagesArr = [];
+const logSoundImagesArr = [];
 
 // Функция для предзагрузки изображений
 function preloadImages(images, callback, templateUrl, arrayImages) {
@@ -74,10 +81,11 @@ function preloadImages(images, callback, templateUrl, arrayImages) {
 }
 
 function startAnimation() {
-    console.log('все готово')
+    console.log('все готово');
 }
 
 preloadImages(logAboutImages, startAnimation, '/log/media/log-frames/', logAboutImagesArr);
+preloadImages(logSoundImages, startAnimation, '/log/media/log-sound-frames/', logSoundImagesArr);
 // конец подготовки
 
 
@@ -134,6 +142,38 @@ const logAboutTimeline = gsap
 
                 // fourth animation
                 frameCheck(frame, logAboutAnimationFourth, 320, 485);
+            },
+        }
+    })
+
+// log sound
+const logSoundTimeline = gsap
+    .timeline({
+        scrollTrigger: {
+            trigger: "#log_sound_block",
+            start: "top -20%",
+            end: '+=100%',
+            markers: true,
+            duration: 20,
+            scrub: true,
+            toggleActions: "play none none reverse",
+            onUpdate: (self) => {
+                const totalFrames = logSoundImagesArr.length;
+                const frame = Math.floor(self.progress * totalFrames);
+
+                // Проверка на предварительную загрузку изображений
+                if (logSoundImagesArr[frame]) {
+                    soundLogImage.src = logSoundImagesArr[frame].src;
+                }
+
+                // Предварительная загрузка следующего изображения
+                if (frame < totalFrames - 1 && !logSoundImagesArr[frame + 1]) {
+                    const nextFrame = frame + 1;
+                    const nextImage = new Image();
+                    nextImage.src = `/log/media/log-sound-frames/000${nextFrame < 10 ? '0' : ''}${nextFrame}-min.png`;
+                    
+                    logSoundImagesArr[nextFrame] = nextImage;
+                }
             },
         }
     })
