@@ -10,6 +10,7 @@ let logScroll = gsap
             start: "top",
             scrub: true,
             end: "+=100%",
+            markers: true,
             toggleActions: "play none none reverse",
             duration: 2,
             onEnterBack: () => {
@@ -41,11 +42,11 @@ let logScroll = gsap
     
 
 // about log animation
-const aboutLog = document.getElementById('about__log');
-const aboutLogFirstBlock = document.getElementById('about__log_animation');
-const aboutLogImage = document.getElementById("log_block-first_img");
+// const aboutLog = document.getElementById('about__log');
+// const aboutLogFirstBlock = document.getElementById('about__log_animation');
+// const aboutLogImage = document.getElementById("log_block-first_img");
 
-const logAboutImages = Array.from({ length:486 }, (_, index) => `Анимация_LOG_${index > 100 ? '' : '0'}00${index < 10 ? '0' : ''}${index}-min.png`);
+// const logAboutImages = Array.from({ length:486 }, (_, index) => `Анимация_LOG_${index > 100 ? '' : '0'}00${index < 10 ? '0' : ''}${index}-min.png`);
 
 // log sound animation
 const soundLog = document.getElementById('log_sound_block');
@@ -54,7 +55,7 @@ const soundLogImage = document.getElementById("log__sound-img");
 const logSoundImages = Array.from({ length:60 }, (_, index) => `000${index < 10 ? '0' : ''}${index}-min.png`);
 
 // Массив для хранения загруженных изображений
-const logAboutImagesArr = [];
+// const logAboutImagesArr = [];
 const logSoundImagesArr = [];
 
 // Функция для предзагрузки изображений
@@ -82,7 +83,7 @@ function startAnimation() {
     console.log('все готово');
 }
 
-preloadImages(logAboutImages, startAnimation, '/log/media/log-frames/', logAboutImagesArr);
+//preloadImages(logAboutImages, startAnimation, '/log/media/log-frames/', logAboutImagesArr);
 preloadImages(logSoundImages, startAnimation, '/log/media/log-sound-frames/', logSoundImagesArr);
 // конец подготовки
 
@@ -101,47 +102,49 @@ function frameCheck(frame, selector, start, end) {
     }
 }
 
-const logAboutTimeline = gsap
-    .timeline({
-        scrollTrigger: {
-            trigger: "#about__log",
-            start: "top +20%",
-            end: '+=100%',
-            duration: 20,
-            scrub: true,
-            toggleActions: "play none none reverse",
-            onUpdate: (self) => {
-                const totalFrames = logAboutImagesArr.length;
-                const frame = Math.floor(self.progress * totalFrames);
+// const logAboutTimeline = gsap
+//     .timeline({
+//         scrollTrigger: {
+//             trigger: "#about__log",
+//             start: "top +20%",
+//             end: '+=100%',
+//             duration: 20,
+//             scrub: true,
+//             toggleActions: "play none none reverse",
+//             onUpdate: (self) => {
+//                 console.log(self);
 
-                // Проверка на предварительную загрузку изображений
-                if (logAboutImagesArr[frame]) {
-                    aboutLogImage.src = logAboutImagesArr[frame].src;
-                }
+//                 const totalFrames = logAboutImagesArr.length;
+//                 const frame = Math.floor(self.progress * totalFrames);
 
-                // Предварительная загрузка следующего изображения
-                if (frame < totalFrames - 1 && !logAboutImagesArr[frame + 1]) {
-                    const nextFrame = frame + 1;
-                    const nextImage = new Image();
-                    nextImage.src = `/log/media/log-frames/Анимация_LOG_${nextFrame > 100 ? '' : '0'}00${nextFrame < 10 ? '0' : ''}${nextFrame}-min.png`;
+//                 // Проверка на предварительную загрузку изображений
+//                 if (logAboutImagesArr[frame]) {
+//                     aboutLogImage.src = logAboutImagesArr[frame].src;
+//                 }
+
+//                 // Предварительная загрузка следующего изображения
+//                 if (frame < totalFrames - 1 && !logAboutImagesArr[frame + 1]) {
+//                     const nextFrame = frame + 1;
+//                     const nextImage = new Image();
+//                     nextImage.src = `/log/media/log-frames/Анимация_LOG_${nextFrame > 100 ? '' : '0'}00${nextFrame < 10 ? '0' : ''}${nextFrame}-min.png`;
                     
-                    logAboutImagesArr[nextFrame] = nextImage;
-                }
+//                     logAboutImagesArr[nextFrame] = nextImage;
+//                 }
 
-                // first animation
-                frameCheck(frame, logAboutAnimationFirst, 30, 75);
+//                 // first animation
+//                 frameCheck(frame, logAboutAnimationFirst, 30, 75);
 
-                // second animation
-                frameCheck(frame, logAboutAnimationSecond, 120, 220);
+//                 // second animation
+//                 frameCheck(frame, logAboutAnimationSecond, 120, 220);
 
-                // Third animation
-                frameCheck(frame, logAboutAnimationThird, 270, 320);
+//                 // Third animation
+//                 frameCheck(frame, logAboutAnimationThird, 270, 320);
 
-                // fourth animation
-                frameCheck(frame, logAboutAnimationFourth, 320, 485);
-            },
-        }
-    })
+//                 // fourth animation
+//                 frameCheck(frame, logAboutAnimationFourth, 320, 485);
+//             },
+//         }
+//     })
 
 // log sound
 const logSoundTimeline = gsap
@@ -203,3 +206,67 @@ let logMediaScroll = gsap
             }
         }
     })
+
+
+
+const aboutLogImage = document.getElementById("log_block-first_img");
+let aboutLogLoadingValue = document.querySelector(".loading-value");
+
+let aboutLogFrameCount = 485;
+let aboutLogCurrentFrame = index => (
+    `/log/media/log-frames/Анимация_LOG_${(index + 1).toString().padStart(5, '0')}-min.png`
+);
+
+let aboutLogImages = []
+let aboutLog = {
+    frame: 0
+};
+
+let imagesToLoad = aboutLogFrameCount;
+
+for (let i = 0; i < aboutLogFrameCount; i++) {
+    const aboutLogImg = new Image();
+    aboutLogImg.onload = aboutLogOnLoad;
+    aboutLogImg.src = aboutLogCurrentFrame(i);
+    aboutLogImages.push(aboutLogImg);
+}
+
+function aboutLogOnLoad() {
+    imagesToLoad--;
+    this.onload = null;  
+    aboutLogLoadingValue.textContent = Math.round((aboutLogFrameCount - imagesToLoad) / aboutLogFrameCount * 100) + "%"
+    
+    if (!imagesToLoad) {
+        aboutLogRender();
+        gsap.to(".loading-container", { autoAlpha: 0 });    
+    }
+}
+
+gsap.to(aboutLog, {
+    frame: aboutLogFrameCount - 1,
+    snap: "frame",
+    ease: "none",
+    scrollTrigger: {
+        trigger: "#about__log",
+        start: "top",
+        end: "+=" + (window.innerHeight * 10),
+        scrub: 0.5
+    },
+    onUpdate: aboutLogRender // use animation onUpdate instead of scrollTrigger's onUpdate
+});
+
+function aboutLogRender() {
+    aboutLogImage.src = aboutLogImages[aboutLog.frame].currentSrc;
+
+    // first animation
+    frameCheck(aboutLog.frame, logAboutAnimationFirst, 30, 75);
+
+    // second animation
+    frameCheck(aboutLog.frame, logAboutAnimationSecond, 120, 220);
+
+    // Third animation
+    frameCheck(aboutLog.frame, logAboutAnimationThird, 270, 320);
+
+    // fourth animation
+    frameCheck(aboutLog.frame, logAboutAnimationFourth, 320, 485);
+}

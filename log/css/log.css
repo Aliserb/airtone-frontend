@@ -104,7 +104,7 @@
 }
 
 .about__log-section {
-    height: 5000px;
+    height: 8000px;
 }
 
 .about__log-wrapper {
@@ -399,4 +399,8 @@
 .log_media_video_pause.active {
     opacity: 1;
     visibility: visible;
+}
+
+#log_block-first_img {
+    width: 100%;
 }
