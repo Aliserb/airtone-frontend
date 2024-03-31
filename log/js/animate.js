@@ -30,10 +30,6 @@ let logScroll = gsap
         },
         duration: 1,
     })
-    .to(window, {
-        duration: 3,
-        scrollTo: { y: "+=2000", autoKill: true },
-    })
     .to(".banner__log_video-text-wrap", {
         opacity: 1,
         visibility: "visible",
